@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+
+
+<p id="Resultado">0</p>
+
+<div>
+<button onclick="limpar()">C</button>
+<button onclick="divisao()">/</button>
+<button onclick="multiplicar()">X</button>
+<button ondblclick="resultar()">=</button>
+
+</div>
+
+<div>
+<button onclick="btn_(7)">7</button>
+<button onclick="btn_(8)">8</button>
+<button onclick="btn_(9)">9</button>
+<button onclick="subtrair()">-</button>
+
+</div>
+
+<div>
+<button onclick="btn_(4)">4</button>
+<button onclick="btn_(5)">5</button>
+<button onclick="btn_(6)">6</button>
+<button onclick="somar()">+</button>
+
+</div>
+
+<div>
+<button onclick="btn_(1)">1</button>
+<button onclick="btn_(2)">2</button>
+<button onclick="btn_(3)">3</button>
+<button onclick="btn_(0)">0</button>
+
+</div>
+
+
+
+<style>
+
+button {
+
+ width: 25px;
+ height: 25px;
+border-radius: 100%;
+}
+
+
+</style>
+
+<script>
+
+var n1 = 0; 
+var n2 = 0;
+var operador;
+
+function btn_(param) {
+
+if(document.getElementById("Resultado").innerHTML == 0)
+{
+document.getElementById("Resultado").innerHTML = param;
+}
+else
+{
+document.getElementById("Resultado").innerHTML += param;
+}
+
+}
+
+function somar() {
+operador = "+";
+    n1 = document.getElementById("Resultado").innerHTML;
+    document.getElementById("Resultado").innerHTML = 0;
+
+}
+
+function multiplicar() {
+operador = "*";
+    n1 = document.getElementById("Resultado").innerHTML;
+    document.getElementById("Resultado").innerHTML = 0;
+
+}
+
+function subtrair() {
+operador = "-";
+    n1 = document.getElementById("Resultado").innerHTML;
+    document.getElementById("Resultado").innerHTML = 0;
+
+}
+
+function divisao() {
+operador = "/";
+    n1 = document.getElementById("Resultado").innerHTML;
+    document.getElementById("Resultado").innerHTML = 0;
+
+}
+
+function limpar() {
+
+    n1 = 0;
+    n2 = 0;
+    operador = "";
+    document.getElementById("Resultado").innerHTML = 0;
+
+}
+
+
+function resultar() {
+
+n2 = document.getElementById("Resultado").innerHTML;
+
+if (operador == "+") document.getElementById("Resultado").innerHTML = Number(n1) + Number(n2);
+if (operador == "*") document.getElementById("Resultado").innerHTML = Number(n1) * Number(n2);
+if (operador == "-") document.getElementById("Resultado").innerHTML = Number(n1) - Number(n2);
+if (operador == "/") document.getElementById("Resultado").innerHTML = Number(n1) / Number(n2);
+
+}
+</script>
+
+</body>
+</html>
